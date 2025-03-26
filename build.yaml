@@ -1,0 +1,67 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  creationTimestamp: "2025-03-26T04:32:43Z"
+  managedFields:
+  - apiVersion: build.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:nodeSelector: {}
+        f:output:
+          f:pushSecret:
+            .: {}
+            f:name: {}
+          f:to:
+            .: {}
+            f:kind: {}
+            f:name: {}
+        f:runPolicy: {}
+        f:source:
+          f:git:
+            .: {}
+            f:ref: {}
+            f:uri: {}
+          f:type: {}
+        f:strategy:
+          f:dockerStrategy: {}
+          f:type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2025-03-26T04:32:43Z"
+  - apiVersion: build.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:lastVersion: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: "2025-03-26T04:33:24Z"
+  name: greeting-console
+  namespace: build-image
+  resourceVersion: "266189785"
+  selfLink: /apis/build.openshift.io/v1/namespaces/build-image/buildconfigs/greeting-console
+  uid: 58ee5432-1348-42dd-8722-229e43b6cf5c
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: {}
+  output:
+    pushSecret:
+      name: regtoken
+    to:
+      kind: DockerImage
+      name: quay.io/ravindra-be2004/greeting-console
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: main
+      uri: https://github.com/ravindra-be2004/do400-greeting-console
+    type: Git
+  strategy:
+    dockerStrategy: {}
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+status:
+  lastVersion: 1
